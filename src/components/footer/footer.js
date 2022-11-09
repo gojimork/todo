@@ -1,11 +1,15 @@
 import TasksFilter from "../tasks-filter"
 
-const Footer = () => {
+const Footer = ({showActiveTasks, showAllTasks, showCompletedTasks, clearCompleted, activeTasksCount}) => {
     return (
         <footer className="footer">
-          <span className="todo-count">1 items left</span>
-          <TasksFilter />
-          <button className="clear-completed">Clear completed</button>
+          <span className="todo-count">{activeTasksCount} items left</span>
+          <TasksFilter showActiveTasks={showActiveTasks}
+          showAllTasks={showAllTasks}
+          showCompletedTasks={showCompletedTasks}/>
+          <button className="clear-completed"
+                  onClick={clearCompleted}
+          >Clear completed</button>
         </footer>
     )
 }

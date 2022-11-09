@@ -1,14 +1,15 @@
-const TasksFilter = () => {
+const TasksFilter = ({showActiveTasks,showAllTasks,showCompletedTasks}) => {
     return (
         <ul className="filters">
             <li>
-              <button className="selected">All</button>
+              <button 
+              onClick={showAllTasks}>All</button>
             </li>
             <li>
-              <button>Active</button>
+              <button onClick={showActiveTasks}>Active</button>
             </li>
             <li>
-              <button>Completed</button>
+              <button onClick={showCompletedTasks}>Completed</button>
             </li>
           </ul>
     )
